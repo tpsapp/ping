@@ -3,10 +3,12 @@ import sys
 import settings
 from game import GAME
 
+pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 clock = pygame.time.Clock()
 
-screen = pygame.display.set_mode((settings.screen_width, settings.screen_height))
+screen = pygame.display.set_mode(
+    (settings.screen_width, settings.screen_height))
 pygame.display.set_caption(settings.screen_caption)
 game = GAME(screen)
 
